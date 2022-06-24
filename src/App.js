@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
 import Login from './pages/Login';
 import FoodContextProvider from './FoodContext/foodContextProvider';
 import Food from './pages/Food';
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={ Login } />
+          <Route exact path="/home" component={ Home } />
           <Route path="/foods/" component={ Food } />
           <Route path="/drinks/" component={ Drinks } />
           <Route path="/profile" component={ Profile } />

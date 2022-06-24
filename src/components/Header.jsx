@@ -4,14 +4,16 @@ import PropTypes from 'prop-types';
 import Profile from '../images/profileIcon.svg';
 import SearchIcon from '../images/searchIcon.svg';
 import SearchBar from './SearchBar';
+import '../styles/Header.css';
 
 export default function Header(props) {
   const history = useHistory();
   const { title, showSearchIcon } = props;
   const [showBar, setShowBar] = useState(false);
   return (
-    <div>
+    <div className="headerDiv">
       <button
+        className="btnProfile"
         type="button"
         data-testid="profile-top-btn"
         src="profileIcon"
@@ -27,6 +29,7 @@ export default function Header(props) {
       </p>
       {showSearchIcon && (
         <button
+          className="btnSearch"
           type="button"
           data-testid="search-top-btn"
           src="searchIcon"

@@ -1,8 +1,39 @@
+* {
+  box-sizing: border-box;
+  font-family: Monserrat , sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 footer {
   bottom: 0;
   display: flex;
   justify-content: space-between;
   left: 0;
   position: fixed;
+  width: 100%;
+}
+
+button {
+  border: none;
+  padding: 2%;
+  width: 80%;
+}
+
+/* button:hover {
+  background: var(--btn-hover);
+} */
+
+.btnStandard {
+  background: #a97dcd;
+  width: 100%;
+}
+
+.btnStandard button {
+  background-color: #a97dcd;
+}
+
+.btnSelected button {
+  background: rgb(254, 166, 3);
   width: 100%;
 }

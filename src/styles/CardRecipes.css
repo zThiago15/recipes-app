@@ -1,0 +1,23 @@
+.card-content {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  margin-left: 30px;
+  margin-top: 10px;
+
+  /* width: 100px; */
+}
+
+.card-content p {
+  margin-left: 50px;
+  margin-top: 150px;
+}
+
+.card-content img {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  margin-left: 15px;
+  margin-top: 150px;
+  width: 100px;
+}

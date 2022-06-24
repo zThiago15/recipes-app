@@ -12,6 +12,8 @@ import {
   getDrinksByName,
   getDrinksByFirstLetter,
 } from '../service/drinkAPI';
+import '../styles/SearchBar.css';
+import '../styles/InputRadios.css';
 
 function SearchBar() {
   const [typeInput, setTypeInput] = useState('');
@@ -95,8 +97,9 @@ function SearchBar() {
   };
 
   return (
-    <form className="search-bar">
+    <form className="form-search-bar">
       <input
+        className="search-input"
         data-testid="search-input"
         type="text"
         placeholder="Search Recipe"
@@ -128,6 +131,7 @@ function SearchBar() {
         labelContent="First Letter"
       />
       <button
+        className="btnSearch"
         type="submit"
         data-testid="exec-search-btn"
         onClick={ handleSetMeal }

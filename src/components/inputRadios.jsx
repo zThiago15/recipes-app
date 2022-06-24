@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/InputRadios.css';
 
 function InputRadios({ dataTestid, id, name, value, onClick, labelContent }) {
   return (
     <label htmlFor={ id }>
       <input
+        className="radio"
         type="radio"
         data-testid={ dataTestid }
         id={ id }

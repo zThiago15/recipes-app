@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.recipeApp {
+  align-items: center;
+
+  /* background: rgb(251, 143, 3); */
+  color: white;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+@keyframes motion {
+
+  0% {
+    transform: rotateZ(-8deg);
+  }
+
+  10% {
+    transform: rotateZ(8deg);
+  }
+
+  20% {
+    transform: rotateZ(-6.5deg);
+  }
+
+  30% {
+    transform: rotateZ(6.5deg);
+  }
+
+  40% {
+    transform: rotateZ(-4deg);
+  }
+
+  50% {
+    transform: rotateZ(4deg);
+  }
+
+  60% {
+    transform: rotateZ(-2.5deg);
+  }
+
+  70% {
+    transform: rotateZ(2.5deg);
+  }
+
+  80% {
+    transform: rotateZ(-1deg);
+  }
+
+  90% {
+    transform: rotateZ(1deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.recipeApp h1 {
+  animation: motion 1s linear;
+  margin-right: 10px;
+}
+
+@keyframes meal {
+
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  10% {
+    transform: rotateY(-10deg);
+  }
+
+  20% {
+    transform: rotateY(0deg);
+  }
+
+  80% {
+    transform: rotateY(720deg);
+  }
+
+  90% {
+    transform: rotateY(710deg);
+  }
+
+  100% {
+    transform: rotateY(720deg);
+  }
+
+}
+
+.recipeApp img {
+  animation: meal 1s linear;
+  background-color: rgb(255, 187, 0);
+  border-radius: 10px;
+  margin-left: 1px;
+  padding: 10px;
+}
+
+.recipeApp span {
+  color: rgb(246, 166, 5);
+}
+
+.recipeApp img:hover {
+  fill: aqua;
+}
+
+svg path {
+  fill: aqua;
+}

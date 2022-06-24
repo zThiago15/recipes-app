@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import '../styles/Login.css';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -25,8 +26,9 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className="divLogin">
       <input
+        className="inputLogin"
         type="email"
         placeholder="email"
         data-testid="email-input"
@@ -35,6 +37,7 @@ export default function Login() {
         onChange={ ({ target: { value } }) => setEmail(value) }
       />
       <input
+        className="inputLogin"
         type="password"
         placeholder="password"
         data-testid="password-input"
@@ -43,6 +46,7 @@ export default function Login() {
         onChange={ ({ target: { value } }) => setPassword(value) }
       />
       <button
+        className="btnLogin"
         type="button"
         data-testid="login-submit-btn"
         disabled={ isButtonDisabled }

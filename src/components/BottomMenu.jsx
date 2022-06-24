@@ -8,30 +8,48 @@ import '../styles/BottomMenu.css';
 export default function BottomMenu() {
   const history = useHistory();
 
+  const toogle = ({ target }) => {
+    const btns = document.querySelectorAll('.btnStandard');
+    btns.forEach((btn) => {
+      btn.className = 'btnStandard';
+    });
+    target.parentNode.classList.add('btnSelected');
+  };
+
   return (
     <footer data-testid="footer">
-      <button
-        type="button"
-        onClick={ () => history.push('/drinks') }
-      >
-        <img src={ drinkIcon } alt="Ícone de bebida" data-testid="drinks-bottom-btn" />
-      </button>
-      <button
-        type="button"
-        onClick={ () => history.push('/explore') }
-      >
-        <img
-          src={ exploreIcon }
-          alt="Ícone de exploração"
-          data-testid="explore-bottom-btn"
-        />
-      </button>
-      <button
-        type="button"
-        onClick={ () => history.push('/foods') }
-      >
-        <img src={ mealIcon } alt="Ícone de comida" data-testid="food-bottom-btn" />
-      </button>
+      <div className="btnStandard">
+        <button
+          type="button"
+          onClick={ (e) => {
+            history.push('/drinks');
+            toogle(e);
+          } }
+        >
+
+          <img src={ drinkIcon } alt="Ícone de bebida" data-testid="drinks-bottom-btn" />
+        </button>
+      </div>
+      <div className="btnStandard">
+        <button
+          type="button"
+          onClick={ () => history.push('/explore') }
+        >
+          <img
+            src={ exploreIcon }
+            alt="Ícone de exploração"
+            data-testid="explore-bottom-btn"
+          />
+        </button>
+      </div>
+      <div className="btnStandard btnSelected">
+        <button
+          type="button"
+          onClick={ () => history.push('/foods') }
+        >
+          <img src={ mealIcon } alt="Ícone de comida" data-testid="food-bottom-btn" />
+        </button>
+      </div>
     </footer>
   );
 }
