@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: Monserrat , sans-serif;
+  font-family: Smooch , cursive;
   margin: 0;
   padding: 0;
 }
@@ -20,20 +20,16 @@ button {
   width: 80%;
 }
 
-/* button:hover {
-  background: var(--btn-hover);
-} */
-
 .btnStandard {
-  background: #a97dcd;
+  background: #68646cb5;
   width: 100%;
 }
 
 .btnStandard button {
-  background-color: #a97dcd;
+  background-color: #a97dcd00;
 }
 
 .btnSelected button {
-  background: rgb(254, 166, 3);
+  background: rgba(254, 166, 3, 0.705);
   width: 100%;
 }

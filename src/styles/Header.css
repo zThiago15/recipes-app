@@ -14,22 +14,19 @@
 }
 
 .btnProfile {
-  background: gray;
+  background: rgb(251, 168, 2);
   border: none;
-  border-radius: 20px;
   cursor: pointer;
   margin: auto;
   margin-bottom: 20px;
   margin-top: 75px;
   padding: 7px;
   transition: 1s;
-  width: 80%;
+  width: 40%;
 }
 
 .btnSearch {
-  background: gray;
-  border: none;
-  border-radius: 20px;
+  background: rgb(251, 168, 2);
   cursor: pointer;
   margin: auto;
   margin-bottom: 10px;
@@ -37,7 +34,7 @@
   outline: none;
   padding: 10px;
   transition: 1s;
-  width: 80%;
+  width: 40%;
 }
 
 .btnSearch:hover {
@@ -47,7 +44,7 @@
 /* foods  */
 p {
   color: white;
-  margin-left: -230px;
 
-  /* margin-top: 30px; */
+  /* margin-left: -230px; */
+  margin-top: 30px;
 }

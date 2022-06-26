@@ -5,13 +5,13 @@
 }
 
 .form-search-bar {
-  bottom: 0;
+  color: white;
   display: flex;
   flex-direction: column;
   height: 100px;
   left: 0;
   margin: auto;
-  margin-top: 15%;
+  margin-bottom: 160px;
   position: relative;
   right: 0;
   width: 95vw;
@@ -23,7 +23,6 @@
   flex-direction: column;
   height: 34px;
   margin: auto;
-  margin-bottom: 10px;
   margin-left: 30px;
   margin-top: 40px;
   padding: 10px;
@@ -35,10 +34,10 @@
   align-items: center;
   background: #a97dcd;
   border: none;
-  color: white;
+  color: rgb(13, 0, 16);
   display: flex;
   flex-direction: column;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-left: 30px;
   margin-right: auto;
   padding: 10px;
