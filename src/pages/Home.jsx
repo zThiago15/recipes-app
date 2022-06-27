@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Home.css';
-import mealIcon from '../images/mealIcon.svg';
+// import mealIcon from '../images/mealIcon.svg';
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         {' '}
         App
       </h1>
-      <img src={ mealIcon } alt="Ícone de comida" data-testid="food-bottom-btn" />
+      {/* <img src={ mealIcon } alt="Ícone de comida" data-testid="food-bottom-btn" /> */}
     </div>
   );
 }
