@@ -1,16 +1,6 @@
-/* .card-content {
-  display: flex;
-  flex-flow: wrap;
-  flex-direction: row;
-  margin-left: 30px;
-  margin-top: 10px;
-  width: 50%;
-} */
-
 .card-content p {
-  color: rgb(131, 89, 142);
   display: flex;
-  font-size: 1.3em;
+  font-size: 1.5em;
   justify-content: center;
   margin-bottom: 10px;
   margin-left: 0;
@@ -18,12 +8,12 @@
 
 }
 
-div > img {
-  border: 10px solid rgb(76, 56, 15);
+.card-content > .card-image {
+  border: 10px solid rgb(254, 254, 254);
   bottom: 0;
   display: flex;
   justify-content: center;
   margin-left: 90px;
-  margin-top: 50px;
+  margin-top: 60px;
   width: 50%;
 }

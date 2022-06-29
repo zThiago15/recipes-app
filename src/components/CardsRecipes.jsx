@@ -10,6 +10,7 @@ function CardsRecipes({ dataTestIdCard, dataTestIdImage, dataTestIdName, name, i
     >
 
       <img
+        className="card-image"
         data-testid={ dataTestIdImage }
         src={ image }
         alt={ name }
