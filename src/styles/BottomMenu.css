@@ -17,19 +17,20 @@ footer {
 button {
   border: none;
   padding: 2%;
-  width: 80%;
 }
 
-.btnStandard {
+.btnSelected, .btnSelected button {
+  background: rgba(254, 166, 3, 0.705);
+  width: 100%;
+}
+
+.btnStandard, .btnStandard button {
   background: #68646cb5;
   width: 100%;
 }
 
-.btnStandard button {
-  background-color: #a97dcd00;
-}
-
-.btnSelected button {
-  background: rgba(254, 166, 3, 0.705);
+.btnSelected, .btnStandard {
+  text-align: center;
   width: 100%;
 }
+

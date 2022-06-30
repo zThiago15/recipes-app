@@ -8,29 +8,22 @@ import '../styles/BottomMenu.css';
 export default function BottomMenu() {
   const history = useHistory();
 
-  const toogle = ({ target }) => {
-    const btns = document.querySelectorAll('.btnStandard');
-    btns.forEach((btn) => {
-      btn.className = 'btnStandard';
-    });
-    target.parentNode.classList.add('btnSelected');
-  };
+  const path = window.location.href;
 
   return (
-    <footer data-testid="footer">
-      <div className="btnStandard">
+    <footer
+      className="footer"
+      data-testid="footer"
+    >
+      <div className={ path.includes('drinks') ? 'btnSelected' : 'btnStandard' }>
         <button
           type="button"
-          onClick={ (e) => {
-            history.push('/drinks');
-            toogle(e);
-          } }
+          onClick={ () => history.push('/drinks') }
         >
-
           <img src={ drinkIcon } alt="Ícone de bebida" data-testid="drinks-bottom-btn" />
         </button>
       </div>
-      <div className="btnStandard">
+      <div className={ path.includes('explore') ? 'btnSelected' : 'btnStandard' }>
         <button
           type="button"
           onClick={ () => history.push('/explore') }
@@ -42,7 +35,7 @@ export default function BottomMenu() {
           />
         </button>
       </div>
-      <div className="btnStandard btnSelected">
+      <div className={ path.includes('foods') ? 'btnSelected' : 'btnStandard' }>
         <button
           type="button"
           onClick={ () => history.push('/foods') }
