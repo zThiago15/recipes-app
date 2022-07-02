@@ -13,7 +13,18 @@
   bottom: 0;
   display: flex;
   justify-content: center;
-  margin-left: 90px;
-  margin-top: 60px;
   width: 50%;
+}
+
+.card-content {
+  align-items: center;
+  background-color: #1a012e;
+  border: 1px solid rgba(0, 0, 0, 0.521);
+  border-radius: 5px;
+  box-shadow: 3px 8px 5px rgba(0, 0, 0, 0.521);
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto;
+  padding: 0 0 15px;
+  width: 90vw;
 }

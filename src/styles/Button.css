@@ -1,0 +1,11 @@
+.btns-filter {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.btn-filter {
+  line-height: 15px;
+  padding: 10px 5px;
+}

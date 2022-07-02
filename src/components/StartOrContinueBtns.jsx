@@ -61,6 +61,7 @@ export default function StartOrContinueBtns({ id, isFoodOrDrink }) {
     <div>
       {!isRecipeStarted && (
         <button
+          className="start-continue-btn"
           data-testid="start-recipe-btn"
           type="button"
           onClick={ startRecipe }
@@ -74,12 +75,9 @@ export default function StartOrContinueBtns({ id, isFoodOrDrink }) {
       )}
       {isRecipeInProgress && (
         <button
+          className="start-continue-btn"
           data-testid="start-recipe-btn"
           type="button"
-          style={ {
-            position: 'fixed',
-            bottom: '0',
-          } }
           onClick={ continueRecipe }
         >
           Continue Recipe

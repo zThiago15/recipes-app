@@ -74,7 +74,7 @@ export default function ShareOrFavoriteBtns({
   }, [id, favoriteRecipes, isFoodOrDrink, currentRecipe]);
 
   return (
-    <div>
+    <div className="share-favorite-btns-container">
       <button
         data-testid="share-btn"
         type="button"
@@ -87,7 +87,7 @@ export default function ShareOrFavoriteBtns({
           src={ shareIcon }
           alt="Share Recipe"
         />
-        {link}
+        <p>{link}</p>
       </button>
 
       <button

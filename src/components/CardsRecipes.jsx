@@ -38,6 +38,7 @@ function CardsRecipes({
       <p data-testid={ dataTestIdName }>{ name }</p>
 
       <button
+        className="access-btn"
         data-testid={ dataTestIdCard }
         type="button"
         id={ id }

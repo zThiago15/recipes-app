@@ -47,22 +47,24 @@ export default function Drinks() {
   return (
     <div>
       <Header title="Drinks" showSearchIcon />
-      <Button
-        dataTestIdButton="All-category-filter"
-        name="All"
-        onClick={ ({ target }) => handleFilter(target.name) }
-      />
-      {buttonDrink
-        && buttonDrink
-          .slice(0, NUMBER_CATEGORIES)
-          .map((categories, index) => (
-            <Button
-              key={ index }
-              dataTestIdButton={ `${categories.strCategory}-category-filter` }
-              name={ categories.strCategory }
-              onClick={ ({ target }) => handleFilter(target.name) }
-            />
-          ))}
+      <div className="btns-filter">
+        <Button
+          dataTestIdButton="All-category-filter"
+          name="All"
+          onClick={ ({ target }) => handleFilter(target.name) }
+        />
+        {buttonDrink
+          && buttonDrink
+            .slice(0, NUMBER_CATEGORIES)
+            .map((categories, index) => (
+              <Button
+                key={ index }
+                dataTestIdButton={ `${categories.strCategory}-category-filter` }
+                name={ categories.strCategory }
+                onClick={ ({ target }) => handleFilter(target.name) }
+              />
+            ))}
+      </div>
       {drink
         && drink
           .slice(0, NUMBER_OF_CARDS)

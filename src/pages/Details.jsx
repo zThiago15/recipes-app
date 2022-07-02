@@ -5,6 +5,7 @@ import { getDrinkById, getAllDrinksInitial } from '../service/drinkAPI';
 import Carousel from '../components/Carousel';
 import StartOrContinueBtns from '../components/StartOrContinueBtns';
 import ShareOrFavoriteBtns from '../components/ShareOrFavoriteBtns';
+import '../styles/Details.css';
 
 const SIX = 6;
 
@@ -61,13 +62,12 @@ export default function Details() {
   }, [recipe]);
 
   return (
-    <section>
+    <section className="details-page-container">
       <img
         src={ recipe.strMealThumb || recipe.strDrinkThumb }
         alt={ recipe.strMeal || recipe.strDrink }
         data-testid="recipe-photo"
       />
-
       <h2
         data-testid="recipe-title"
       >
@@ -80,13 +80,11 @@ export default function Details() {
         isFoodOrDrink={ isFoodOrDrink }
       />
 
-      <div
-        style={ { display: 'flex' } }
-      >
+      <div>
         <h3
-          style={ { marginRight: '5px' } }
+          className="bullet-point"
         >
-          Categoria:
+          Categoria
         </h3>
         {' '}
         <h4
@@ -97,7 +95,9 @@ export default function Details() {
       </div>
 
       <div>
-        <h3>
+        <h3
+          className="bullet-point"
+        >
           Ingredientes
         </h3>
         <ul>
@@ -120,12 +120,14 @@ export default function Details() {
       </div>
 
       <div>
-        <h3>
+        <h3
+          className="bullet-point"
+        >
           Instruções
         </h3>
         <p
           data-testid="instructions"
-          style={ { lineHeight: '50px' } }
+          style={ { lineHeight: '50px', marginTop: '10px' } }
         >
           { recipe.strInstructions }
         </p>
