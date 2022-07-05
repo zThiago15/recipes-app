@@ -1,20 +1,23 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import FoodContext from '../FoodContext/foodContext';
 import shareIcon from '../images/shareIcon.svg';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
 
 export default function ShareOrFavoriteBtns({
-  id, recipe: currentRecipe, isFoodOrDrink,
+  id, recipe: currentRecipe, index, setFilteredRecipes,
 }) {
-  const { shareRecipe } = useContext(FoodContext);
   const [link, setLink] = useState('');
   const [favoriteRecipes, setFavoriteRecipes] = useState(
     JSON.parse(localStorage.getItem('favoriteRecipes')),
   );
   const [isThisRecipeFavorited, setIsThisRecipeFavorited] = useState(false);
   const [newRecipe, setNewRecipe] = useState({});
+
+  const { pathname } = useLocation();
+
+  const [, isFoodOrDrink] = pathname;
 
   const favoriteRecipe = () => {
     if (favoriteRecipes) {
@@ -23,6 +26,7 @@ export default function ShareOrFavoriteBtns({
       if (isTheRecipeAlreadyFavorited) {
         const newFavoriteRecipes = favoriteRecipes.filter((recipe) => recipe.id !== id);
         localStorage.setItem('favoriteRecipes', JSON.stringify(newFavoriteRecipes));
+        setFilteredRecipes(newFavoriteRecipes);
         setFavoriteRecipes(newFavoriteRecipes);
         setIsThisRecipeFavorited(false);
       } else {
@@ -37,6 +41,16 @@ export default function ShareOrFavoriteBtns({
       setFavoriteRecipes(newFavoriteRecipes);
       setIsThisRecipeFavorited(true);
     }
+  };
+
+  const share = () => {
+    const { id: currentId } = currentRecipe;
+    const { type } = currentRecipe;
+    const address = window.location.href.split('/');
+    const newAddress = address
+      .filter((word) => word !== 'favorite-recipes').join('/');
+    const url = `${newAddress}/${type}s/${currentId}`;
+    navigator.clipboard.writeText(url);
   };
 
   useEffect(() => {
@@ -73,14 +87,17 @@ export default function ShareOrFavoriteBtns({
     }
   }, [id, favoriteRecipes, isFoodOrDrink, currentRecipe]);
 
+  console.log(currentRecipe);
+
   return (
     <div>
       <button
-        data-testid="share-btn"
+        data-testid={ `${index}-horizontal-share-btn` }
+        src="shareIcon"
         type="button"
         onClick={ () => {
           setLink('Link copied!');
-          shareRecipe();
+          share();
         } }
       >
         <img
@@ -91,7 +108,7 @@ export default function ShareOrFavoriteBtns({
       </button>
 
       <button
-        data-testid="favorite-btn"
+        data-testid={ `${index}-horizontal-favorite-btn` }
         type="button"
         src={ isThisRecipeFavorited ? blackHeartIcon : whiteHeartIcon }
         onClick={ favoriteRecipe }
@@ -108,6 +125,6 @@ export default function ShareOrFavoriteBtns({
 ShareOrFavoriteBtns.propTypes = {
   id: PropTypes.string,
   currentRecipe: PropTypes.shape({}),
-  isFoodOrDrink: PropTypes.string,
   index: PropTypes.number,
+  setFilteredRecipes: PropTypes.func,
 }.isRequired;
