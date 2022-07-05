@@ -16,8 +16,9 @@ const FoodContextProvider = ({ children }) => {
   const shareRecipe = () => {
     const link = window.location.href;
     const linkArray = link.split('/');
-    if (linkArray.includes('in-progress')) {
-      const filterdArray = linkArray.filter((word) => word !== 'in-progress');
+    if (linkArray.includes('in-progress') || linkArray.includes('favorite-recipes')) {
+      const filterdArray = linkArray.filter((word) => word !== 'in-progress'
+      && word !== 'favorite-recipes');
       const newArray = filterdArray.join('/');
       navigator.clipboard.writeText(newArray);
     } else {
