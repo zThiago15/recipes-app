@@ -5,7 +5,7 @@ import shareIcon from '../images/shareIcon.svg';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
 import whiteHeartIcon from '../images/whiteHeartIcon.svg';
 
-export default function ShareOrFavoriteBtns({
+export default function ShareOrFavoriteBtnsVariant({
   id, recipe: currentRecipe, index, setFilteredRecipes,
 }) {
   const [link, setLink] = useState('');
@@ -122,7 +122,7 @@ export default function ShareOrFavoriteBtns({
   );
 }
 
-ShareOrFavoriteBtns.propTypes = {
+ShareOrFavoriteBtnsVariant.propTypes = {
   id: PropTypes.string,
   currentRecipe: PropTypes.shape({}),
   index: PropTypes.number,
