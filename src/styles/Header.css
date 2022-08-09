@@ -1,12 +1,3 @@
-* {
-  box-sizing: border-box;
-
-  /* font-family: Caveat , sans-serif; */
-  font-family: Indie Flower , cursive;
-  margin: 0;
-  padding: 0;
-}
-
 .headerDiv {
   align-items: center;
   display: flex;

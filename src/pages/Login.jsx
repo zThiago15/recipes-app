@@ -24,37 +24,46 @@ export default function Login() {
   };
 
   return (
-    <div className="divLogin">
-      <input
-        className="inputLogin"
-        type="email"
-        placeholder="email"
-        data-testid="email-input"
-        value={ email }
-        name="email"
-        onChange={ ({ target: { value } }) => setEmail(value) }
-      />
-      <input
-        className="inputLogin"
-        type="password"
-        placeholder="password"
-        data-testid="password-input"
-        value={ password }
-        name="password"
-        onChange={ ({ target: { value } }) => setPassword(value) }
-      />
-      <Link to="/foods">
-        <button
-          className="btnLogin"
-          type="button"
-          data-testid="login-submit-btn"
-          disabled={ isButtonDisabled }
-          onClick={ RedirectToRecipes }
-        >
-          Enter
-        </button>
-      </Link>
-    </div>
+    <section
+      className="loginContainer"
+    >
+      <div className="divLogin">
+        <input
+          className="inputLogin"
+          type="email"
+          placeholder="email"
+          data-testid="email-input"
+          value={ email }
+          name="email"
+          onChange={ ({ target: { value } }) => setEmail(value) }
+        />
+        <input
+          className="inputLogin"
+          type="password"
+          placeholder="password"
+          data-testid="password-input"
+          value={ password }
+          name="password"
+          onChange={ ({ target: { value } }) => setPassword(value) }
+        />
+        <Link to="/foods">
+          <button
+            className="btnLogin"
+            type="button"
+            data-testid="login-submit-btn"
+            disabled={ isButtonDisabled }
+            onClick={ RedirectToRecipes }
+            style={ isButtonDisabled ? { backgroundColor: '#ccc' } : (
+              {
+                backgroundColor: 'var(--primary-color)',
+                cursor: 'pointer',
+              }) }
+          >
+            Enter
+          </button>
+        </Link>
+      </div>
+    </section>
   );
 }
 

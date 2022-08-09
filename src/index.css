@@ -1,0 +1,22 @@
+:root {
+
+  --primary-color: #ff9e00;
+
+  --secondary-color: #11011e;
+
+  --font-color: #080808;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Comfortaa' , sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--secondary-color);
+  min-height: 100vh;
+}
+

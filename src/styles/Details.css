@@ -1,13 +1,7 @@
-* {
-
-  --secondary-color: #fba803;
-}
-
 .details-page-container {
   color: white;
   text-align: center;
 }
-
 
 .details-page-container h2 {
   color: var(--secondary-color);

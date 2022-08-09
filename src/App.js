@@ -14,6 +14,7 @@ import ExploreFoods from './pages/ExploreFoods';
 import ExploreDrinks from './pages/ExploreDrinks';
 import ExploreIngredients from './pages/ExploreIngredients';
 import ExploreNationality from './pages/ExploreNationality';
+import './App.css';
 
 function App() {
   return (
