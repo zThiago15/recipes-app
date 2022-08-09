@@ -6,6 +6,7 @@ import FoodContext from '../FoodContext/foodContext';
 import Button from '../components/Button';
 import { getAllMealsInitial,
   getMealByCategory, getMealByIngredient } from '../service/mealAPI';
+import '../styles/Food.css';
 
 export default function Food() {
   const [filter, setFilter] = useState('All');
@@ -70,7 +71,7 @@ export default function Food() {
         title="Foods"
         showSearchIcon
       />
-      <div className="btns-filter">
+      <div className="btnsFilter">
         <Button
           dataTestIdButton="All-category-filter"
           name="All"

@@ -29,7 +29,7 @@ export default function Header(props) {
       </p>
       {showSearchIcon && (
         <button
-          className="btnSearch"
+          className="btnSearchIcon"
           type="button"
           data-testid="search-top-btn"
           src="searchIcon"
