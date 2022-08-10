@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Profile from '../images/profileIcon.svg';
@@ -9,9 +9,14 @@ import '../styles/Header.css';
 export default function Header(props) {
   const history = useHistory();
   const { title, showSearchIcon } = props;
-  const [showBar, setShowBar] = useState(false);
+  const toogleSearchBar = () => {
+    const formSearchBar = document.querySelector('.formSearchBar');
+    const header = document.querySelector('header');
+    header.classList.toggle('header-active');
+    formSearchBar.classList.toggle('active');
+  };
   return (
-    <div className="headerDiv">
+    <header className="header">
       <button
         className="btnProfile"
         type="button"
@@ -33,15 +38,15 @@ export default function Header(props) {
           type="button"
           data-testid="search-top-btn"
           src="searchIcon"
-          onClick={ () => setShowBar(!showBar) }
+          onClick={ () => toogleSearchBar() }
         >
           <img
             src={ SearchIcon }
             alt="Profile"
           />
         </button>)}
-      {showBar && <SearchBar />}
-    </div>
+      <SearchBar />
+    </header>
   );
 }
 

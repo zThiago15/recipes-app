@@ -1,15 +1,21 @@
-.headerDiv {
+.header {
   align-items: center;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color-variant);
   display: flex;
   flex-direction: column;
+  height: 5em;
   justify-content: space-between;
-  min-height: 5em;
   padding: 0.625em;
   position: fixed;
   text-align: center;
   top: 0;
   width: 100%;
+  z-index: 1;
+}
+
+.header.active {
+  background-color: var(--primary-color);
+  min-height: 5em;
 }
 
 .btnProfile {
@@ -33,8 +39,8 @@
 }
 
 /* foods  */
-p {
-  color: white;
+.header p {
+  color: var(--quartenary-color);
   font-size: 2em;
   text-align: center;
 }
