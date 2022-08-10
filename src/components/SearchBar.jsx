@@ -15,6 +15,13 @@ import {
 import '../styles/SearchBar.css';
 import '../styles/InputRadios.css';
 
+const toogleSearchBar = () => {
+  const formSearchBar = document.querySelector('.formSearchBar');
+  const header = document.querySelector('header');
+  header.classList.toggle('header-active');
+  formSearchBar.classList.toggle('active');
+};
+
 function SearchBar() {
   const [typeInput, setTypeInput] = useState('');
   const [searchInput, setSearchInput] = useState('');
@@ -99,44 +106,53 @@ function SearchBar() {
   };
 
   return (
-    <form className="form-search-bar">
+    <form
+      className="formSearchBar"
+    >
       <input
-        className="search-input"
+        className="searchInput"
         data-testid="search-input"
         type="text"
         placeholder="Search Recipe"
         value={ searchInput }
         onChange={ ({ target }) => setSearchInput(target.value) }
       />
-      <InputRadios
-        dataTestid="ingredient-search-radio"
-        id="ingredient-search-radio"
-        name="search-radio"
-        value="ingredient"
-        onClick={ handleClick }
-        labelContent="Ingredient"
-      />
-      <InputRadios
-        dataTestid="name-search-radio"
-        id="name-search-radio"
-        name="search-radio"
-        value="name"
-        onClick={ handleClick }
-        labelContent="Name"
-      />
-      <InputRadios
-        dataTestid="first-letter-search-radio"
-        id="first-letter-search-radio"
-        name="search-radio"
-        value="firstLetter"
-        onClick={ handleClick }
-        labelContent="First Letter"
-      />
+      <div
+        className="inputRadiosContainer"
+      >
+        <InputRadios
+          dataTestid="ingredient-search-radio"
+          id="ingredient-search-radio"
+          name="search-radio"
+          value="ingredient"
+          onClick={ handleClick }
+          labelContent="Ingredient"
+        />
+        <InputRadios
+          dataTestid="name-search-radio"
+          id="name-search-radio"
+          name="search-radio"
+          value="name"
+          onClick={ handleClick }
+          labelContent="Name"
+        />
+        <InputRadios
+          dataTestid="first-letter-search-radio"
+          id="first-letter-search-radio"
+          name="search-radio"
+          value="firstLetter"
+          onClick={ handleClick }
+          labelContent="First Letter"
+        />
+      </div>
       <button
         className="btnSearch"
         type="submit"
         data-testid="exec-search-btn"
-        onClick={ handleSetMeal }
+        onClick={ (event) => {
+          handleSetMeal(event);
+          toogleSearchBar();
+        } }
       >
         Search
       </button>
