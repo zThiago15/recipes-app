@@ -1,3 +1,29 @@
+.foodSection {
+  margin-bottom: 4em;
+}
+
 .btnsFilter {
-  margin-top: 7em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+  margin: 7em auto 0;
+  width: 95%;
+}
+
+.btnsFilter > * {
+  background-color: var(--quinary-color);
+  border-radius: 5px;
+  flex: 1 1 auto;
+}
+
+.allCardRecipes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1em;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.allCardRecipes > * {
+  flex: 1 1 auto;
 }

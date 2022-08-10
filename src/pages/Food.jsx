@@ -66,7 +66,9 @@ export default function Food() {
   }, [setMeal]);
 
   return (
-    <div>
+    <section
+      className="foodSection"
+    >
       <Header
         title="Foods"
         showSearchIcon
@@ -89,20 +91,23 @@ export default function Food() {
               />
             ))}
       </div>
-      { meal && meal.slice(0, NUMBER_OF_CARDS).map((food, index) => (
-        <CardsRecipes
-          key={ food.idMeal }
-          name={ food.strMeal }
-          id={ food.idMeal }
-          image={ food.strMealThumb }
-          dataTestIdCard={ `${index}-recipe-card` }
-          dataTestIdImage={ `${index}-card-img` }
-          dataTestIdName={ `${index}-card-name` }
-          route="foods"
-        />
-      ))}
-
+      <div
+        className="allCardRecipes"
+      >
+        { meal && meal.slice(0, NUMBER_OF_CARDS).map((food, index) => (
+          <CardsRecipes
+            key={ food.idMeal }
+            name={ food.strMeal }
+            id={ food.idMeal }
+            image={ food.strMealThumb }
+            dataTestIdCard={ `${index}-recipe-card` }
+            dataTestIdImage={ `${index}-card-img` }
+            dataTestIdName={ `${index}-card-name` }
+            route="foods"
+          />
+        ))}
+      </div>
       <BottomMenu />
-    </div>
+    </section>
   );
 }
