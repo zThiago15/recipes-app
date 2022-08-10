@@ -4,11 +4,24 @@
 
   --secondary-color: #11011e;
 
-  --font-color: #080808;
+  --secondary-color-variant: #11011eea;
+
+  --tertiary-color: #1a012e;
+
+  --quartenary-color: #fefefe;
+
+  --quinary-color: #b3b3b3;
+
+  --senary-color: #a97dcd;
+
+  --font-color: #0d0010;
+
+  --border-box-color: #00000085;
 }
 
 * {
   box-sizing: border-box;
+  color: var(--font-color);
   font-family: 'Comfortaa' , sans-serif;
   margin: 0;
   padding: 0;
@@ -18,4 +31,8 @@
 body {
   background-color: var(--secondary-color);
   min-height: 100vh;
+}
+
+button {
+  border: none;
 }
