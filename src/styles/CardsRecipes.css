@@ -1,0 +1,35 @@
+.cardContent {
+  align-items: center;
+  background-color: var(--tertiary-color);
+  border: 1px solid var(--border-box-color);
+  border-radius: 5px;
+  box-shadow: 3px 8px 5px var(--border-box-color);
+  display: flex;
+  flex-direction: column;
+  margin: 0.938em auto;
+  padding: 0.938em 0;
+}
+
+.cardContent p {
+  color: var(--quartenary-color);
+  display: flex;
+  font-size: 1.5em;
+  justify-content: center;
+  margin: 0.416em 0;
+}
+
+.cardContent > .cardImage {
+  border: 0.625em solid var(--quartenary-color);
+  max-width: 250px;
+  min-width: 180px;
+  width: 50%;
+}
+
+.accessBtn {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 0.312em;
+  box-shadow: 0.187em 0.5em 0.312em var(--border-box-color);
+  margin: 0.625em auto;
+  padding: 0.938em 0.5em;
+}

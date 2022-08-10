@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/CardRecipes.css';
+import '../styles/CardsRecipes.css';
 import { useHistory } from 'react-router-dom';
 import FoodContext from '../FoodContext/foodContext';
 
@@ -26,12 +26,11 @@ function CardsRecipes({
 
   return (
     <div
-      className="card-content"
+      className="cardContent"
       data-testid={ dataTestIdCard }
     >
-      <p data-testid={ dataTestIdName }>{ name }</p>
       <img
-        className="card-image"
+        className="cardImage"
         data-testid={ dataTestIdImage }
         src={ image }
         alt={ name }
@@ -39,13 +38,13 @@ function CardsRecipes({
       <p data-testid={ dataTestIdName }>{ name }</p>
 
       <button
-        className="access-btn"
+        className="accessBtn"
         data-testid={ dataTestIdCard }
         type="button"
         id={ id }
         onClick={ (e) => handleRedirect(e) }
       >
-        Acessar Receita
+        Access Recipe
       </button>
     </div>
   );
