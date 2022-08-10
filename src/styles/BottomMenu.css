@@ -1,15 +1,10 @@
-footer {
+.footer {
   bottom: 0;
   display: flex;
   justify-content: space-between;
   left: 0;
   position: fixed;
   width: 100%;
-}
-
-button {
-  border: none;
-  padding: 2%;
 }
 
 .btnSelected, .btnSelected button {
@@ -27,3 +22,8 @@ button {
   width: 100%;
 }
 
+.footer > div > button {
+  border: none;
+  max-height: 3.5em;
+  padding: 2%;
+}
