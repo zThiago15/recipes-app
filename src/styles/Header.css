@@ -39,8 +39,9 @@
 }
 
 /* foods  */
-.header p {
+.header h2 {
   color: var(--quartenary-color);
   font-size: 2em;
+  max-width: 200px;
   text-align: center;
 }

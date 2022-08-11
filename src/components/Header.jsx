@@ -29,9 +29,9 @@ export default function Header(props) {
           alt="Profile"
         />
       </button>
-      <p data-testid="page-title">
+      <h2 data-testid="page-title">
         { title }
-      </p>
+      </h2>
       {showSearchIcon && (
         <button
           className="btnSearchIcon"
