@@ -1,8 +1,45 @@
-footer {
+.footer {
   bottom: 0;
   display: flex;
   justify-content: space-between;
   left: 0;
   position: fixed;
   width: 100%;
+}
+
+.footerBtns {
+  background-color: var(--septenary-color);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerBtns > * {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.pageBtn {
+  background-color: var(--septenary-color);
+}
+
+.pageBtn.active {
+  background-color: var(--primary-color);
+}
+
+.exploreBtn.active {
+  background-color: var(--senary-color);
+}
+
+.footer > div > div > button {
+  background-color: inherit;
+  border: none;
+  max-height: 3.5em;
+  padding: 2%;
+  width: 100%;
+}
+
+div > div > button > img {
+  background-color: inherit;
 }

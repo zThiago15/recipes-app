@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/CardsRecipes.css';
 import { useHistory } from 'react-router-dom';
 import FoodContext from '../FoodContext/foodContext';
 
@@ -24,20 +25,26 @@ function CardsRecipes({
   };
 
   return (
-    <div>
-      <p data-testid={ dataTestIdName }>{ name }</p>
+    <div
+      className="cardContent"
+      data-testid={ dataTestIdCard }
+    >
       <img
+        className="cardImage"
         data-testid={ dataTestIdImage }
         src={ image }
         alt={ name }
       />
+      <p data-testid={ dataTestIdName }>{ name }</p>
+
       <button
+        className="accessBtn"
         data-testid={ dataTestIdCard }
         type="button"
         id={ id }
         onClick={ (e) => handleRedirect(e) }
       >
-        Acessar Receita
+        Access Recipe
       </button>
     </div>
   );

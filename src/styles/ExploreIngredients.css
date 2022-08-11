@@ -1,0 +1,38 @@
+.exploreIngredientsSection {
+  display: flex;
+  margin: 7em auto 4.5em;
+}
+
+.ingredientsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.ingredientsContainer > button {
+  align-items: center;
+  background-color: var(--tertiary-color);
+  border: 0.062em solid var(--border-box-color);
+  border-radius: 0.312em;
+  box-shadow: 0.187em 0.5em 0.312em var(--border-box-color);
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0.938em auto;
+  min-width: 200px;
+  padding: 0.938em 0;
+}
+
+.ingredient > img {
+  border: 0.625em solid var(--quartenary-color);
+  max-width: 200px;
+  min-width: 150px;
+  width: 50%;
+}
+
+.ingredient > p {
+  color: var(--quartenary-color);
+}

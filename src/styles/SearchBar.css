@@ -1,0 +1,61 @@
+.formSearchBar {
+  align-items: center;
+  background-color: var(--secondary-color-variant);
+  color: var(--quartenary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: space-evenly;
+  min-height: 100px;
+  padding: 1.5em 0;
+  position: absolute;
+  transform: translateY(-15em);
+  transition: transform 700ms ease-in-out;
+  width: 100%;
+  z-index: 0;
+}
+
+.formSearchBar.active {
+  transform: translateY(4.37em);
+}
+
+.formSearchBar > * {
+  max-width: 31.25em;
+}
+
+.searchInput {
+  border: none;
+  border-radius: 0.312em;
+  display: flex;
+  flex-direction: column;
+  padding: 0.625em;
+  width: 80%;
+}
+
+.inputRadiosContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625em;
+  justify-content: center;
+  width: 80%;
+}
+
+.inputRadiosContainer > * {
+  color: var(--quartenary-color);
+  flex: 1 1 auto;
+}
+
+.btnSearch {
+  background-color: var(--senary-color);
+  border: none;
+  border-radius: 0.312em;
+  color: var(--font-color);
+  font-size: 1rem;
+  padding: 0.625em;
+  transition: background-color 200ms;
+  width: 80%;
+}
+
+.btnSearch:hover {
+  background-color: var(--primary-color);
+}

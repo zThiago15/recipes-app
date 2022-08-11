@@ -1,0 +1,47 @@
+.header {
+  align-items: center;
+  background-color: var(--secondary-color-variant);
+  display: flex;
+  flex-direction: column;
+  height: 5em;
+  justify-content: space-between;
+  padding: 0.625em;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.header.active {
+  background-color: var(--primary-color);
+  min-height: 5em;
+}
+
+.btnProfile {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  left: 0.652em;
+  padding: 0.625em;
+  position: absolute;
+}
+
+.btnSearchIcon {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  padding: 0.625em;
+  position: absolute;
+  right: 0.625em;
+}
+
+/* foods  */
+.header h2 {
+  color: var(--quartenary-color);
+  font-size: 2em;
+  max-width: 200px;
+  text-align: center;
+}

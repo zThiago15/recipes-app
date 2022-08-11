@@ -1,0 +1,13 @@
+.btnsFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+  margin: 7em auto 0;
+  width: 95%;
+}
+
+.btnsFilter > * {
+  background-color: var(--quinary-color);
+  border-radius: 0.312em;
+  flex: 1 1 auto;
+}

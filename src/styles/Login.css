@@ -1,0 +1,35 @@
+.loginContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.divLogin {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 360px;
+  width: 90%;
+}
+
+.divLogin > a {
+  width: 80%;
+}
+
+.inputLogin {
+  height: 34px;
+  margin: 0 auto 15px;
+  outline: none;
+  padding-left: 0.5em;
+  width: 80%;
+}
+
+.btnLogin {
+  color: var(--font-color);
+  font-weight: 800;
+  padding: 0.625em;
+  width: 100%;
+}

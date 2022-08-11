@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Button from '../components/Button';
 import { getMealRandom } from '../service/mealAPI';
 import BottomMenu from '../components/BottomMenu';
+import '../styles/Explore.css';
 
 function ExploreFoods() {
   const history = useHistory();
@@ -14,28 +15,32 @@ function ExploreFoods() {
   };
 
   return (
-    <div>
+    <section
+      className="exploreFoodsSection"
+    >
       <Header
         title="Explore Foods"
         showSearchIcon={ false }
       />
-      <Button
-        dataTestIdButton="explore-by-ingredient"
-        name="By Ingredient"
-        onClick={ () => history.push('/explore/foods/ingredients') }
-      />
-      <Button
-        dataTestIdButton="explore-by-nationality"
-        name="By Nationality"
-        onClick={ () => history.push('/explore/foods/nationalities') }
-      />
-      <Button
-        dataTestIdButton="explore-surprise"
-        name="Surprise me!"
-        onClick={ surpriseMeRandom }
-      />
+      <div className="exploreFoodsBtns">
+        <Button
+          dataTestIdButton="explore-by-ingredient"
+          name="By Ingredient"
+          onClick={ () => history.push('/explore/foods/ingredients') }
+        />
+        <Button
+          dataTestIdButton="explore-by-nationality"
+          name="By Nationality"
+          onClick={ () => history.push('/explore/foods/nationalities') }
+        />
+        <Button
+          dataTestIdButton="explore-surprise"
+          name="Surprise me!"
+          onClick={ surpriseMeRandom }
+        />
+      </div>
       <BottomMenu />
-    </div>
+    </section>
   );
 }
 

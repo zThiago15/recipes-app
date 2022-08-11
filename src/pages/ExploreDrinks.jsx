@@ -14,23 +14,29 @@ function ExploreDrinks() {
   };
 
   return (
-    <div>
+    <section
+      className="exploreDrinksSection"
+    >
       <Header
         title="Explore Drinks"
         showSearchIcon={ false }
       />
-      <Button
-        dataTestIdButton="explore-by-ingredient"
-        name="By Ingredient"
-        onClick={ () => history.push('/explore/drinks/ingredients') }
-      />
-      <Button
-        dataTestIdButton="explore-surprise"
-        name="Surprise me!"
-        onClick={ surpriseMeRandom }
-      />
+      <div
+        className="exploreDrinksBtns"
+      >
+        <Button
+          dataTestIdButton="explore-by-ingredient"
+          name="By Ingredient"
+          onClick={ () => history.push('/explore/drinks/ingredients') }
+        />
+        <Button
+          dataTestIdButton="explore-surprise"
+          name="Surprise me!"
+          onClick={ surpriseMeRandom }
+        />
+      </div>
       <BottomMenu />
-    </div>
+    </section>
   );
 }
 
