@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import BottomMenu from '../components/BottomMenu';
-import CardsRecipes from '../components/CardsRecipes';
 import Header from '../components/Header';
 import FoodContext from '../FoodContext/foodContext';
-import Button from '../components/Button';
+import FilterBtns from '../components/FilterBtns';
+import Recipes from '../components/Recipes';
 import { getAllMealsInitial,
   getMealByCategory, getMealByIngredient } from '../service/mealAPI';
 import '../styles/Food.css';
@@ -13,9 +13,8 @@ export default function Food() {
 
   const [preview, setPreview] = useState('');
   const { buttonMeal, meal, setMeal } = useContext(FoodContext);
-  const NUMBER_OF_CARDS = 12;
-  const NUMBER_CATEGORIES = 5;
 
+  // A Refatorar
   const handleFilter = (filterName) => {
     if (filterName !== filter) {
       setFilter(filterName);
@@ -26,6 +25,7 @@ export default function Food() {
     }
   };
 
+  // A Refatorar
   useEffect(() => {
     const ingredient = localStorage.getItem('filteredIngredient');
 
@@ -53,6 +53,7 @@ export default function Food() {
     handleIngredient();
   }, [filter, setMeal, preview]);
 
+  // A Refatorar
   useEffect(() => {
     const getIngredients = async () => {
       const ingredient = localStorage.getItem('filteredIngredient');
@@ -67,46 +68,19 @@ export default function Food() {
 
   return (
     <section
-      className="foodSection"
+      className="foodsSection"
     >
       <Header
         title="Foods"
         showSearchIcon
       />
-      <div className="btnsFilter">
-        <Button
-          dataTestIdButton="All-category-filter"
-          name="All"
-          onClick={ ({ target }) => handleFilter(target.name) }
-        />
-        {buttonMeal
-          && buttonMeal
-            .slice(0, NUMBER_CATEGORIES)
-            .map((categories, index) => (
-              <Button
-                key={ index }
-                dataTestIdButton={ `${categories.strCategory}-category-filter` }
-                name={ categories.strCategory }
-                onClick={ ({ target }) => handleFilter(target.name) }
-              />
-            ))}
-      </div>
-      <div
-        className="allCardRecipes"
-      >
-        { meal && meal.slice(0, NUMBER_OF_CARDS).map((food, index) => (
-          <CardsRecipes
-            key={ food.idMeal }
-            name={ food.strMeal }
-            id={ food.idMeal }
-            image={ food.strMealThumb }
-            dataTestIdCard={ `${index}-recipe-card` }
-            dataTestIdImage={ `${index}-card-img` }
-            dataTestIdName={ `${index}-card-name` }
-            route="foods"
-          />
-        ))}
-      </div>
+      <FilterBtns
+        buttons={ buttonMeal }
+        handleFilter={ handleFilter }
+      />
+      <Recipes
+        recipes={ meal }
+      />
       <BottomMenu />
     </section>
   );
