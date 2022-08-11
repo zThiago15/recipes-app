@@ -5,7 +5,7 @@ import '../styles/Button.css';
 function Button({ dataTestIdButton, name, onClick }) {
   return (
     <button
-      className="btn-filter"
+      className="btnFilter"
       data-testid={ dataTestIdButton }
       name={ name }
       type="button"
