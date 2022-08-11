@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import BottomMenu from '../components/BottomMenu';
 import { getAllMealIngredients } from '../service/mealAPI';
 import { getAllDrinkIngredients } from '../service/drinkAPI';
+import '../styles/ExploreIngredients.css';
+import Ingredients from '../components/Ingredients';
 
 export default function ExploreIngredients() {
   const [ingredients, setIngredients] = useState([]);
@@ -34,39 +36,19 @@ export default function ExploreIngredients() {
   };
 
   return (
-    <div>
+    <section
+      className="exploreIngredientsSection"
+    >
       <Header
         title="Explore Ingredients"
         showSearchIcon={ false }
       />
-      { ingredients && ingredients.map((ingredient, index) => {
-        const limit = 12;
-        if (index < limit) {
-          return (
-            <button
-              type="button"
-              onClick={ () => handleIngredient(ingredient.strIngredient
-                || ingredient.strIngredient1) }
-              key={ ingredient.strIngredient || ingredient.strIngredient1 }
-            >
-              <div
-                data-testid={ `${index}-ingredient-card` }
-                key={ ingredient.strIngredient || ingredient.strIngredient1 }
-              >
-                <img data-testid={ `${index}-card-img` } src={ mealOrDrink === 'foods' ? `https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}-Small.png` : `https://www.thecocktaildb.com/images/ingredients/${ingredient.strIngredient1}-Small.png` } alt={ ingredient.strIngredient || ingredient.strIngredient1 } />
-                <p
-                  data-testid={ `${index}-card-name` }
-                >
-                  { ingredient.strIngredient || ingredient.strIngredient1 }
-
-                </p>
-              </div>
-            </button>
-          );
-        }
-        return '';
-      }) }
+      <Ingredients
+        ingredients={ ingredients }
+        handleIngredient={ handleIngredient }
+        mealOrDrink={ mealOrDrink }
+      />
       <BottomMenu />
-    </div>
+    </section>
   );
 }
