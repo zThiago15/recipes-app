@@ -1,0 +1,21 @@
+.exploreSection, .exploreFoodsSection, .exploreDrinksSection {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.exploreBtns, .exploreFoodsBtns, .exploreDrinksBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  max-width: 250px;
+  width: 50%;
+}
+
+.exploreBtns > *, .exploreFoodsBtns > *, .exploreDrinksBtns > * {
+  background-color: var(--quinary-color);
+  border-radius: 0.312em;
+  flex: 1 1 auto;
+}
+
